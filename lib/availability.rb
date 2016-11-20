@@ -28,5 +28,4 @@ class Availability
 			return true 
 		end
 	end
-
 end
