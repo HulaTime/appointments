@@ -1,4 +1,4 @@
-# require 'availability'
+require 'availability'
 
 describe Availability do
 	
