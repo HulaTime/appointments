@@ -1,17 +1,19 @@
-class Availability
+class Input
 
 	attr_reader :time
 
 	def initialize
-		raise ARG_ERROR if ARGV.length != 1
-		raise FORMAT_ERROR if bad_format?
+		if ARGV.length != 1 || bad_format?
+			puts FORMAT_ERROR 
+			abort
+		end
 		@time = ARGV
 	end
 
 	private
 
 	ARG_ERROR = "Format: availability.rb hh:mm"
-	FORMAT_ERROR = "You did not enter a time\n#{ARG_ERROR}"
+	FORMAT_ERROR = "Please provide a time to check.\n#{ARG_ERROR}"
 
 	def bad_format?
 		split_time = ARGV[0].split(':')
