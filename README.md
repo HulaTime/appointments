@@ -1,10 +1,13 @@
 #Availability Ruby Test
 Your task is to create an app that will allow patients to book appointments with a doctor, using the dataset provided.
 
+There is a method that is repeated in availability and available slots, ordinarily I would extend the String class to take that method (:find_seconds(time) or refactor it out but for the purposes of this test I am leaving it in for now)
+
 ##Done
 - create a command line app that accepts a single argument, which is the time that the patient would like to book
 - The app should check which is the next available slot
 - Your app should accept a time (eg: 12:40)
+- Patients cannot book appointments before 8am and after 3pm
 
 ###Requirements
 You should create a command line app that accepts a single argument, which is the time that the patient would like to book to see a doctor. Eg: `$ ./availability.rb 12:40`
