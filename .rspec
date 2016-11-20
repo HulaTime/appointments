@@ -1,3 +1,4 @@
+--require availability
 --format d
 --color
 --require spec_helper
