@@ -4,7 +4,7 @@ Your task is to create an app that will allow patients to book appointments with
 ###Requirements
 You should create a command line app that accepts a single argument, which is the time that the patient would like to book to see a doctor. Eg:
 
-$ ./availability.rb 12:40
+`$ ./availability.rb 12:40`
 The app should check which is the next available slot and book it. It should print the time of the appointment that was booked
 
 ###Additional Requirements
