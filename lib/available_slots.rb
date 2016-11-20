@@ -2,11 +2,14 @@ require 'json'
 
 class AvailableSlots
 
-	attr_reader :raw_file, :parsed_file
+	attr_reader :parsed_file
 
 	def initialize
-		@raw_file = File.read(ROOT_PATH + "/assets/availability_slots.json")
+		raw_file = File.read(ROOT_PATH + "/assets/availability_slots.json")
 		@parsed_file = JSON.parse(raw_file)['availability_slots']
+	end
+
+	def closest_appointment(arg)
 	end
 
 	private

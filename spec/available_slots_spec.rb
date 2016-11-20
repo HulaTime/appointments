@@ -8,14 +8,20 @@ describe AvailableSlots do
 	json_path = "/assets/availability_slots.json"
 	json_file = File.read(root_path + json_path)
 
-	it 'is initialized with all the available times' do
-		expect(slots.raw_file).to eq json_file
-	end
+	close_appointment = {
+        "time"=>"08:40:00",
+        "slot_size"=>10,
+        "doctor_id"=>1
+     }
 
-	it 'should parse the json file into a ruby hash' do
+	it 'initialized with and parses the json file into a ruby hash' do
 		expect(slots.parsed_file[0]['time']).to eq "08:00:00"
 		expect(slots.parsed_file[3]['slot_size']).to eq 10
 		expect(slots.parsed_file[15]['doctor_id']).to eq 2
+	end
+
+	it ':closest_appointment(argument) checks for closest slot to argument' do
+		expect(slots.closest_appointment("08:39")).to eq close_appointment
 	end
 
 end
