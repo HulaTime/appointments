@@ -16,11 +16,11 @@ Unfortunately due to time constraints this test is still in need of refactoring.
 - Your app should accept a time (eg: 12:40)
 - Your app should print the time that was booked (eg: 1:10)
 - In the dataset there are multiple doctors (id: 1 & 2) and each doctor can only have 1 appointment per slot. For example, you could potentially book 12:20 once for doctor 1 and again for doctor 2.
+- Once an availability has been used up for an appointment it cannot be booked again.
 
 ###Requirements
 
 ###Additional Requirements
-Once an availability has been used up for an appointment it cannot be booked again.
 
 ###Constraints
 
