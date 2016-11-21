@@ -28,6 +28,7 @@ class AvailableSlots
 		if bookings[1].include?(app) == false
 			bookings[1].push(app)
 		end
+		return app['time']
 	end
 
 	private

@@ -9,4 +9,4 @@ CheckTime.new(time)
 
 slots = AvailableSlots.new
 
-slots.book_slot(time)
+puts "\nYour appointment has been booked for #{slots.book_slot(time)}"
