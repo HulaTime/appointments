@@ -1,12 +1,11 @@
-class Booking
+class CheckTime
 
 	attr_reader :time
 
-	def initialize
-		raise ARG_ERROR if ARGV.length != 1
+	def initialize(time)
+		@time = time
 		raise FORMAT_ERROR if bad_format?
-		raise RANGE_ERROR if out_of_range?(ARGV[0])
-		@time = ARGV
+		raise RANGE_ERROR if out_of_range?(time)
 	end
 
 	private
@@ -16,7 +15,7 @@ class Booking
 	RANGE_ERROR = "Sorry, bookings are only available between 08:00 and 15:00"
 
 	def bad_format?
-		t = ARGV[0].split(':')
+		t = time.split(':')
 		t.map! do |n|
 			return true if (n =~ /^[0-9]+$/) == nil
 		end

@@ -22,6 +22,13 @@ class AvailableSlots
 		return close_app
 	end
 
+	def book_slot(time)
+		app = closest_appointment(time)
+		parsed_file.each do |slot|
+			parsed_file[slot]['booked'] = [1] if slot[time] == app
+		end	
+	end
+
 	private
 
 	ROOT_PATH = File.join(File.dirname(__FILE__), '..')
