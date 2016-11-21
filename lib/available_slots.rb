@@ -13,11 +13,11 @@ class AvailableSlots
 	def closest_appointment(arg)
 		secs = find_seconds(arg)
 		close_app = nil
-		time_difference = SECS_IN_DAY
+		time_diff = SECS_IN_DAY
 		parsed_file.each do |slot|
 			slot_time = find_seconds(slot['time'])
-			close_app = slot if (slot_time - secs).abs < time_difference
-			time_difference = (slot_time - secs).abs if (slot_time - secs).abs < time_difference
+			close_app = slot if (slot_time - secs).abs < time_diff
+			time_diff = (slot_time - secs).abs if (slot_time - secs).abs < time_diff
 		end
 		return close_app
 	end

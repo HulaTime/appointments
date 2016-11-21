@@ -1,4 +1,4 @@
-class Availability
+class Booking
 
 	attr_reader :time
 
