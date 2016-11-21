@@ -5,6 +5,8 @@ There is a method that is repeated in availability and available slots, ordinari
 so it is currently still in both files.
 
 ##Done
+Unfortunately due to time constraints this test is unfinished, however the core functionality is in place and can be easilly extended for the final requirements. It also needs refactoring.
+
 - create a command line app that accepts a single argument, which is the time that the patient would like to book
 - The app should check which is the next available slot and book it. It should print the time of the appointment that was booked
 - Your app should accept a time (eg: 12:40)
