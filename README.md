@@ -5,7 +5,7 @@ There is a method that is repeated in availability and available slots, ordinari
 so it is currently still in both files.
 
 ##Done
-Unfortunately due to time constraints this test is still in need of refactoring.
+Unfortunately due to time constraints this test is still in need of refactoring. I would also like to put in a guard condition or message to inform the user that they cannot/the next closest appointment has been booked if the closest time is already fully booked.
 
 - create a command line app that accepts a single argument, which is the time that the patient would like to book
 - The app should check which is the next available slot and book it. It should print the time of the appointment that was booked
