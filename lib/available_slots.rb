@@ -3,11 +3,12 @@ require 'byebug'
 
 class AvailableSlots
 
-	attr_reader :parsed_file
+	attr_reader :parsed_file, :bookings
 
 	def initialize
 		raw_file = File.read(ROOT_PATH + "/assets/availability_slots.json")
 		@parsed_file = JSON.parse(raw_file)['availability_slots']
+		@bookings = {1=>[], 2=>[]}
 	end
 
 	def closest_appointment(arg)
@@ -24,9 +25,9 @@ class AvailableSlots
 
 	def book_slot(time)
 		app = closest_appointment(time)
-		parsed_file.each do |slot|
-			parsed_file[slot]['booked'] = [1] if slot[time] == app
-		end	
+		if bookings[1].include?(app) == false
+			bookings[1].push(app)
+		end
 	end
 
 	private
