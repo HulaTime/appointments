@@ -25,8 +25,8 @@ class AvailableSlots
 
 	def book_slot(time)
 		app = closest_appointment(time)
-		if bookings[1].include?(app) == false
-			bookings[1].push(app)
+		if bookings[1].empty? || bookings[2].empty?
+			bookings[1].include?(app) ?	bookings[2].push(app) :	bookings[1].push(app)
 		end
 		return app['time']
 	end

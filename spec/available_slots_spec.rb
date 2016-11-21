@@ -25,8 +25,9 @@ describe AvailableSlots do
 	end
 
 	it ':book_slot(time) will update parsed file with a booking' do
-		slots.book_slot("08:39")
+		2.times { slots.book_slot("08:39") }
 		expect(slots.bookings[1]).to include close_appointment
+		expect(slots.bookings[2]).to include close_appointment
 	end
 
 end
